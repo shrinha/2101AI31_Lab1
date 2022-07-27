@@ -15,12 +15,14 @@ int main()
       case '-': res = a - b;
          break;
      case '*': res = a * b;
-         break;   
+         break;
+     case '/': res = a / b;
+         break;
 
       default: printf("\n Error  ");
 
     }
-    printf("The value = %f", res);
+    printf("The value of result = %f", res);
 
     return 0;
 }
