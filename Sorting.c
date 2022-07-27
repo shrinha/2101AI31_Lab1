@@ -1,5 +1,23 @@
 #include <stdio.h>
 
+//Function Definiton for Bubble Sorts
+void Bubble(int n,int list[])
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+
+        for (j = 0; j < n - i - 1; j++)
+
+            if (list[j] > list[j + 1])
+            {
+                //Algorithm for swapping two numbers
+                list[j]=list[j] - list[j+1];
+                list[j + 1]=list[j] + list[j + 1];
+                list[j]=list[j+1] - list[j];
+
+            }
+}
+
 int main()
 {
     int n,option;
@@ -14,13 +32,21 @@ int main()
        scanf("%d",&list[i]);
         }
 
-    printf("Enter the Number corresponding to the sorting you want to perform:\n 1 for Bubble \n 2 for Insertion \n 3 for Selection \n 4 for Merge\n 5 for Quick\n ");
+    printf("Enter the Number corresponding to the sorting you want to perform:\n 1 for Bubble \n 2 for Insertion \n 3 for Selection \n 4 for Merge\n 5 for Quick\n===================\n ");
     scanf("%d",&option);
+
+    printf("\nInitial List is :\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", list[i]);
+
+    }
+    printf("\n");
 
 
     switch(option){
         case 1: Bubble(n,list);
-            break;
+            break;/*
         case 2: Inserstion(n,list);
             break;
         case 3: Selection(n,list);
@@ -28,10 +54,18 @@ int main()
         case 4: Merge(n,list);
             break;
         case 5: Quick(n,list);
-             break;
+             break;*/
 
         default: printf("\n Error  ");
-    } 
+    }
+
+    printf("\nThe Sorted List is:\n:");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", list[i]);
+
+    }
     return 0;
 
 
