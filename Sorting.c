@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//Function Definiton for Bubble Sorts
+//Function Definiton for Bubble Sort
 void Bubble(int n,int list[])
 {
     int i, j;
@@ -18,6 +18,30 @@ void Bubble(int n,int list[])
             }
 }
 
+
+
+//Function Definiton for Insertion Sort
+void Insertion(int n,int list[])
+{
+    int i,j,key;
+    for (i = 1; i < n; i++)
+    {
+        key = list[i];
+        j = i - 1;
+
+        while (j >= 0 && list[j] > key)
+        {
+            list[j + 1] = list[j];
+            j = j - 1;
+        }
+        list[j + 1] = key;
+    }
+}
+
+
+
+
+
 int main()
 {
     int n,option;
@@ -25,7 +49,7 @@ int main()
     scanf("%d",&n);
 
     int list[n];
-    printf("Enter the numbers in your array :\n");//Initialising Array of Numbers
+    printf("Enter the numbers in your list :\n");//Initialising Array of Numbers
 
     for(int i=0;i<n;i++)
         {
@@ -46,9 +70,9 @@ int main()
 
     switch(option){
         case 1: Bubble(n,list);
-            break;/*
-        case 2: Inserstion(n,list);
             break;
+        case 2: Insertion(n,list);
+            break;/*
         case 3: Selection(n,list);
             break;
         case 4: Merge(n,list);
@@ -59,9 +83,10 @@ int main()
         default: printf("\n Error  ");
     }
 
-    printf("\nThe Sorted List is:\n:");
 
-    for (int i = 0; i < n; i++)
+
+    printf("\nThe Sorted List is:\n");
+     for (int i = 0; i < n; i++)
     {
         printf("%d ", list[i]);
 
