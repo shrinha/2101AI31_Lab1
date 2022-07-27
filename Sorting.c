@@ -1,5 +1,16 @@
 #include <stdio.h>
 
+//Function to swap numbers
+int swap(int *ap, int *bp)
+{
+    int temp = *ap;
+    *ap = *bp;
+    *bp = temp;
+
+    return 0;
+}
+
+
 //Function Definiton for Bubble Sort
 void Bubble(int n,int list[])
 {
@@ -38,6 +49,26 @@ void Insertion(int n,int list[])
     }
 }
 
+//Function Definition for Selection Sort
+void Selection( int n,int list[])
+{
+    int i, j, mindx;
+
+
+    for (i = 0; i < n-1; i++)
+    {
+        // Finding the index of min element in unsorted part
+        mindx = i;
+        for (j = i+1; j < n; j++)
+          if (list[j] < list[mindx])
+            mindx = j;
+
+        // Swap the found minimum element with the first element of unsorted part
+        swap(&list[mindx], &list[i]);
+
+    }
+}
+
 
 
 
@@ -72,9 +103,9 @@ int main()
         case 1: Bubble(n,list);
             break;
         case 2: Insertion(n,list);
-            break;/*
-        case 3: Selection(n,list);
             break;
+        case 3: Selection(n,list);
+            break;/*
         case 4: Merge(n,list);
             break;
         case 5: Quick(n,list);
