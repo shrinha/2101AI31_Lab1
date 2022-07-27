@@ -13,6 +13,8 @@ int main()
       case '+': res = a + b;
          break;
       case '-': res = a - b;
+         break;
+     case '*': res = a * b;
          break;   
 
       default: printf("\n Error  ");
